@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import HeroSection from "@/components/HeroSection";
-import BlockchainLog from "@/components/BlockChainLog";
+import BlockchainLog from "@/components/BlockchainLog";
 import FraudChart from "@/components/FraudChart";
-
+import AnimatedCursor from "@/components/AnimatedCursor";
+import Navbar from "@/components/Navbar";
 
 
 interface LogEntry {
@@ -34,6 +35,8 @@ const App: React.FC = () => {
 
   return (
     <>
+  <AnimatedCursor/>
+  <Navbar />
       <HeroSection />
 
       <div className="min-h-screen bg-gray-50 px-6 py-12 flex flex-col items-center justify-start">
