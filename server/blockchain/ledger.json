@@ -13,5 +13,50 @@
     "item_id": "dj",
     "time": "2025-07-12T05:22:59.394Z",
     "action": "Genuine Entry"
+  },
+  {
+    "item_id": "ds",
+    "time": "2025-07-12T12:23:12.201Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "dswb",
+    "time": "2025-07-12T12:24:51.181Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "dswb",
+    "time": "2025-07-12T12:24:51.841Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "dswb",
+    "time": "2025-07-12T12:24:52.686Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "fraud",
+    "time": "2025-07-12T12:24:58.462Z",
+    "action": "Fraudulent Entry"
+  },
+  {
+    "item_id": "hi",
+    "time": "2025-07-12T16:00:21.505Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "hi",
+    "time": "2025-07-12T16:15:34.542Z",
+    "action": "Genuine Entry"
+  },
+  {
+    "item_id": "fraud",
+    "time": "2025-07-12T18:08:58.394Z",
+    "action": "Fraudulent Entry"
+  },
+  {
+    "item_id": "hi",
+    "time": "2025-07-12T18:41:02.936Z",
+    "action": "Genuine Entry"
   }
 ]

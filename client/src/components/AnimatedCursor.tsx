@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -11,9 +12,10 @@ const AnimatedCursor: React.FC = () => {
     const move = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       controls.start({
-        x: e.clientX - 15,
-        y: e.clientY - 15,
-        transition: { type: "spring", stiffness: 200, damping: 30 },
+        x: e.clientX - 20,
+        y: e.clientY - 20,
+        transition: { type: "tween" }
+
       });
     };
 
@@ -21,7 +23,6 @@ const AnimatedCursor: React.FC = () => {
     return () => window.removeEventListener("mousemove", move);
   }, [controls]);
 
-  // Detect hover on buttons
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
       if (
@@ -52,13 +53,14 @@ const AnimatedCursor: React.FC = () => {
     <motion.div
       animate={controls}
       initial={{ x: 0, y: 0 }}
-      className="fixed pointer-events-none z-[9999] rounded-full border-2 border-emerald-400"
+      className="fixed pointer-events-none z-[9999] rounded-full"
       style={{
-        width: hovered ? 50 : 30,
-        height: hovered ? 50 : 30,
-        backgroundColor: hovered ? "rgba(16, 185, 129, 0.2)" : "transparent",
-        mixBlendMode: "difference",
-        transition: "width 0.2s ease, height 0.2s ease, background-color 0.3s ease",
+        width: hovered ? 60 : 36,
+        height: hovered ? 60 : 36,
+        border: hovered ? "3px solid #0f172a" : "2px solid #334155",
+        backgroundColor: hovered ? "rgba(51,65,85,0.15)" : "transparent",
+        mixBlendMode: "multiply",
+        transition: "all 0.3s ease",
       }}
     />
   );

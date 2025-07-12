@@ -7,6 +7,12 @@ import BlockchainLog from "@/components/BlockchainLog";
 import FraudChart from "@/components/FraudChart";
 import AnimatedCursor from "@/components/AnimatedCursor";
 import Navbar from "@/components/Navbar";
+import RFIDTagScanner from "@/components/RFIDTagScanner";
+import CTA from "@/components/CTA";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
+import PageProgressBar from "@/components/PageProgressBar";
+import GoToTopButton from "@/components/GoToTop";
 
 
 interface LogEntry {
@@ -35,40 +41,23 @@ const App: React.FC = () => {
 
   return (
     <>
-  <AnimatedCursor/>
+  {/* <AnimatedCursor/> */}
   <Navbar />
+  <GoToTopButton/>
       <HeroSection />
-
-      <div className="min-h-screen bg-gray-50 px-6 py-12 flex flex-col items-center justify-start">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-          TrustLink: RFID Scan Simulation
-        </h1>
-
-        <div className="w-full max-w-md flex items-center gap-3 mb-4">
-          <input
-            className="border border-gray-300 px-4 py-2 rounded w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="Enter RFID Tag ID"
-            value={tagId}
-            onChange={(e) => setTagId(e.target.value)}
-          />
-          <button
-            className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition"
-            onClick={scanTag}
-          >
-            Scan Tag
-          </button>
-        </div>
-
-        <p className="text-lg mb-8 font-medium text-gray-700">
-          Status:{" "}
-          <span className="font-semibold text-blue-700">{status}</span>
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
-          <BlockchainLog logs={logs} />
-          <FraudChart logs={logs} />
-        </div>
-      </div>
+      <PageProgressBar/>
+      <RFIDTagScanner
+        tagId={tagId}
+        setTagId={setTagId}
+        status={status}
+        scanTag={scanTag}
+        logs={logs}
+        BlockchainLog={BlockchainLog}
+        FraudChart={FraudChart}
+      />
+      <CTA/>
+      <ContactForm />
+      <Footer/>
     </>
   );
 };
