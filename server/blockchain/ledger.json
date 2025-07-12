@@ -10,28 +10,8 @@
     "action": "Fraudulent Entry"
   },
   {
-    "item_id": "sdsd",
-    "time": "2025-07-11T19:42:45.980Z",
+    "item_id": "dj",
+    "time": "2025-07-12T05:22:59.394Z",
     "action": "Genuine Entry"
-  },
-  {
-    "item_id": "sdsdddfdf",
-    "time": "2025-07-11T19:43:01.649Z",
-    "action": "Genuine Entry"
-  },
-  {
-    "item_id": "sdsdddfdf",
-    "time": "2025-07-11T19:43:03.243Z",
-    "action": "Genuine Entry"
-  },
-  {
-    "item_id": "sdsdddfdf",
-    "time": "2025-07-11T19:43:04.028Z",
-    "action": "Genuine Entry"
-  },
-  {
-    "item_id": "fraud",
-    "time": "2025-07-11T19:43:16.145Z",
-    "action": "Fraudulent Entry"
   }
 ]
