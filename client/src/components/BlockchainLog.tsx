@@ -38,13 +38,13 @@ const BlockchainLog: React.FC<BlockchainLogProps> = ({ logs }) => {
               >
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="font-semibold text-blue-600">{log.time}</span> —{' '}
+                    <span className="font-semibold text-slate-900">{log.time}</span> —{' '}
                     <span className="font-medium text-slate-800">{log.item_id}</span>
                   </div>
                   <span className="text-slate-500 text-sm">{activeIndex === idx ? "▲" : "▼"}</span>
                 </div>
                 {activeIndex === idx && (
-                  <p className="mt-2 text-sm text-slate-700 italic pl-2 border-l-2 border-blue-400">
+                  <p className="mt-2 text-sm text-slate-800 italic pl-2 border-l-2 ">
                     {log.action}
                   </p>
                 )}

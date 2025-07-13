@@ -14,7 +14,7 @@ const AnimatedCursor: React.FC = () => {
       controls.start({
         x: e.clientX - 20,
         y: e.clientY - 20,
-        transition: { type: "tween" }
+        transition: { type: "spring", stiffness: 300, damping: 20 },
 
       });
     };

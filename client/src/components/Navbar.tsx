@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed top-0 left-0 w-full z-[100] font-['Poppins']">
       <div
         className={`flex justify-between items-center px-6 md:px-10 h-16 max-w-7xl mx-auto transition-all duration-300 
-        ${isScrolled ? "lg:bg-white/30 lg:backdrop-blur-md lg:border-b lg:border-white/20" : ""}`}
+        ${isScrolled ? "bg-white/30 backdrop-blur-md border-b border-white/20 shadow-sm" : ""}`}
       >
         <div className="flex justify-between items-center w-full">
           {/* Left: Logo */}
@@ -42,20 +42,23 @@ const Navbar: React.FC = () => {
             className="flex flex-row items-center gap-1 w-auto h-10"
           >
             <div className="flex flex-col gap-1">
-            <span className="block h-1 w-8 bg-slate-900 " />
-            <span className="block h-1 w-8 bg-slate-900 " />
+              <span className="block h-1 w-8 bg-slate-900" />
+              <span className="block h-1 w-8 bg-slate-900" />
             </div>
-            <span className="text-sm text-slate-900 font-semibold tracking-widest uppercase ">Menu</span>
+            <span className="text-sm text-slate-900 font-semibold tracking-widest uppercase">
+              Menu
+            </span>
           </button>
 
           {/* Right: Reach Us - Hidden on small screens */}
-          <div className="hidden lg:block  px-8 py-2 text-md text-slate-900 border-4 border-slate-900  hover:bg-slate-900 hover:text-white transition duration-300">
-           <Link href="#contact">Reach Us</Link>
+          <div className="hidden lg:block px-8 py-2 text-md text-slate-900 border-4 border-slate-900 hover:bg-slate-900 hover:text-white transition duration-300">
+            <Link href="#contact">Reach Us</Link>
           </div>
         </div>
       </div>
 
-       <AnimatePresence>
+      {/* Sidebar for smaller screens */}
+      <AnimatePresence>
         {sidebarOpen && (
           <motion.div
             initial={{ y: "-100%" }}
@@ -70,7 +73,7 @@ const Navbar: React.FC = () => {
             >
               &times;
             </button>
-            <div className="flex flex-col items-center gap-10  text-4xl lg:text-[4rem] tracking-wider font-extrabold">
+            <div className="flex flex-col items-center gap-10 text-4xl lg:text-[4rem] tracking-wider font-extrabold">
               {navLinks.map(({ label, href }) => (
                 <motion.a
                   key={label}
@@ -95,7 +98,7 @@ const Navbar: React.FC = () => {
               ))}
               <Link
                 href="#contact"
-                className="mt-10 px-8 py-4 text-2xl border-4 border-slate-900 rounded-full hover:bg-slate-900 hover:text-white transition duration-300"
+                className="mt-10 px-8 py-4 text-2xl border-4 border-slate-900 hover:bg-slate-900 hover:text-white transition duration-300"
               >
                 Reach Us
               </Link>

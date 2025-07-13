@@ -1,7 +1,5 @@
-// App.tsx
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
 import HeroSection from "@/components/HeroSection";
 import BlockchainLog from "@/components/BlockchainLog";
 import FraudChart from "@/components/FraudChart";
@@ -13,7 +11,8 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import PageProgressBar from "@/components/PageProgressBar";
 import GoToTopButton from "@/components/GoToTop";
-
+import Preloader from "@/components/Preloader";
+import axios from "axios";
 
 interface LogEntry {
   item_id: string;
@@ -25,12 +24,11 @@ const App: React.FC = () => {
   const [tagId, setTagId] = useState<string>("");
   const [status, setStatus] = useState<string>("");
   const [logs, setLogs] = useState<LogEntry[]>([]);
+  const [showPreloader, setShowPreloader] = useState(true); // Controlled by Preloader
 
   const scanTag = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/scan", {
-        tagId,
-      });
+      const res = await axios.post("http://localhost:5000/api/scan", { tagId });
       setStatus(res.data.message);
       setLogs(res.data.logs);
     } catch (err) {
@@ -41,23 +39,29 @@ const App: React.FC = () => {
 
   return (
     <>
-  {/* <AnimatedCursor/> */}
-  <Navbar />
-  <GoToTopButton/>
-      <HeroSection />
-      <PageProgressBar/>
-      <RFIDTagScanner
-        tagId={tagId}
-        setTagId={setTagId}
-        status={status}
-        scanTag={scanTag}
-        logs={logs}
-        BlockchainLog={BlockchainLog}
-        FraudChart={FraudChart}
-      />
-      <CTA/>
-      <ContactForm />
-      <Footer/>
+      {showPreloader ? (
+        <Preloader onComplete={() => setShowPreloader(false)} />
+      ) : (
+        <>
+          <AnimatedCursor />
+          <Navbar />
+          <GoToTopButton />
+          <HeroSection />
+          <PageProgressBar />
+          <RFIDTagScanner
+            tagId={tagId}
+            setTagId={setTagId}
+            status={status}
+            scanTag={scanTag}
+            logs={logs}
+            BlockchainLog={BlockchainLog}
+            FraudChart={FraudChart}
+          />
+          <CTA />
+          <ContactForm />
+          <Footer />
+        </>
+      )}
     </>
   );
 };
