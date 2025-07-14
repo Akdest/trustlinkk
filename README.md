@@ -47,7 +47,7 @@ Retail giants like Walmart face:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/jasminekaur02/TrustLink.git
+git clone https:(https://github.com/Akdest/trustlinkk)
 cd TrustLink
 ````
 
