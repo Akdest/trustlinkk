@@ -11,7 +11,7 @@ Built with **React + TypeScript** (frontend) and **Express.js** (backend), Trust
 ```
 
 TrustLink/
-├── client/        # React + TypeScript (Vite) frontend
+├── client/        # NextJs + TypeScript frontend
 ├── server/        # Express backend with blockchain simulation
 ├── README.md      # You are here!
 
